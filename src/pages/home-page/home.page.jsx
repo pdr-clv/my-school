@@ -15,7 +15,10 @@ const HomePage = () => {
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla culpa nam quae quibusdam at sapiente velit eius dignissimos dolores dicta?</p>
         </TextBanner>
       <MainSection>
-        <OfferCard></OfferCard>
+        <OfferCard>
+          <h5>Saber o Conocer</h5>
+          <p>Hacer test</p>
+        </OfferCard>
         <OfferCard></OfferCard>
         <OfferCard></OfferCard>
         <OfferCard></OfferCard>

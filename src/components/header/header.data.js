@@ -4,8 +4,8 @@ const headerContent = [
     linkName: 'Home'
   },
   {
-    linkTo:'/courses',
-    linkName: 'courses'
+    linkTo:'/exercices',
+    linkName: 'exercices'
   },
   {
     linkTo:'/link2',

@@ -107,4 +107,7 @@ export const OfferCard = styled.div`
   width: 200px;
   height: 350px;
   margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 `;
