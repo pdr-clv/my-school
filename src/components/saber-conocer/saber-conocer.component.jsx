@@ -1,12 +1,13 @@
 import React,{ useState, useEffect } from 'react';
-
-import { SelectQuestion } from './saber-conocer.styles';
+//import SelectComponent from '../select/select.component';
+import SelectSubmitted from '../select/select.submitWrapper';
+//import { SelectQuestion } from './saber-conocer.styles';
 
 const SaberConocer = () => {
   const options = [
     [
       {
-      text: "Select",
+      text: "----",
       val: ''},
       {text: "Sabes",
       val: true},
@@ -14,7 +15,7 @@ const SaberConocer = () => {
       val: false}
     ],
     [
-      {text: "Select",
+      {text: "",
       val: ''},
       {text: "Sabes",
       val: false},
@@ -26,11 +27,26 @@ const SaberConocer = () => {
 
   
   const [selectedOption, setSelectedOption] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
+  
   useEffect(()=>{
     const valarray = options.map(() => '');
     setSelectedOption(valarray);
   // eslint-disable-next-line
   },[]);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const isAllSelected = selectedOption.findIndex(item => item ==='');
+    console.log(isAllSelected);
+    if (isAllSelected < 0) {
+      setSubmitted(true);
+    } else {
+      alert('Please, select all possible answers');
+    }
+    
+  }
+
   const handleChange = (e) => {
     const index = e.target.id * 1;
     const newItem = e.target.value;
@@ -48,27 +64,24 @@ const SaberConocer = () => {
   }
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
     {options.map((item, i) => 
       <div key={`div${i}`}>
         ¿
-        <SelectQuestion
+        <SelectSubmitted
           key={i}
           value={selectedOption[i]}
-          onChange={handleChange}
+          handleChange={handleChange}
           id={i}
-        >
-        {item.map((option,j) => (
-          <option key={j} value={option.val}>
-            {option.text}
-          </option>
-        ))}
-        </SelectQuestion>
+          options={item}
+          submitted={submitted}
+        />
         <span key={`span${i}`}>{selectedOption[i]}</span>
         {pText[i]}
       </div>
       )}
-    </div>
+      <input type="submit" value='submit'/>
+    </form>
   );
 
 }

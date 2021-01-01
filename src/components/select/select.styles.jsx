@@ -24,4 +24,5 @@ const valueState = ({ value }) => {
 
 export const SelectQuestion = styled.select`
   ${valueState}
+
 `;
