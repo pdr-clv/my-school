@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "question": "_____ alto",
+      "choices": ["somos","estamos","estoy","soy"],
+      "answer": "soy"
+    },
+    {
+      "question": "Mis padres _____ en Barcelona",
+      "choices": ["estamos","están","son","somos"],
+      "answer": "están"
+    },
+    {
+      "question": "¿Dónde ____ (usted)?",
+      "choices": ["eres","es","está","estas"],
+      "answer": "está"
+    },
+    {
+      "question": "_____ muy cansado. Trabajas Mucho",
+      "choices": ["eres","estás","estoy","soy"],
+      "answer": "estás"
+    },
+    {
+      "question": "____ profesores de español",
+      "choices": ["estamos","eres","estan","somos"],
+      "answer": "somos"
+    },
+    {
+      "question": "Mis amigos _____ españoles",
+      "choices": ["es","están","estamos","son"],
+      "answer": "son"
+    },
+    {
+      "question": "El supermercado _____ lejos de casa",
+      "choices": ["son","está","estan","es"],
+      "answer": "está"
+    }
+  ]
+}

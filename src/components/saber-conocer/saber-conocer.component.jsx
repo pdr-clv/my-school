@@ -1,10 +1,10 @@
-import React,{ useState, useEffect } from 'react';
+import React,{ useState } from 'react';
 //import SelectComponent from '../select/select.component';
 import SelectSubmitted from '../select/select.submitWrapper';
-//import { SelectQuestion } from './saber-conocer.styles';
+import { Sentence } from './saber-conocer.styles';
 
 const SaberConocer = () => {
-  const options = [
+  /*const options = [
     [
       {
       text: "----",
@@ -22,18 +22,97 @@ const SaberConocer = () => {
       {text: "Conoces",
       val: true}
     ]
-  ];
-  const pText = [ 'quien es el profesor de matematicas?', 'al profesor de matematicas?'];
+  ];*/
 
-  
+  //const pText = [ 'quien es el profesor de matematicas?', 'al profesor de matematicas?'];
+
+  const sentences = [
+    [
+      {
+        type: 'p',
+        text: '¿'
+      },
+      {
+        type: 'select',
+        options:[
+          {
+            text: "----",
+            val: ''
+          },
+          {
+            text: "Sabes",
+            val: true
+          },
+          {
+            text: "Conoces",
+            val: false
+          }
+        ]
+      },
+      {
+        type:'p',
+        text: 'quien es el profesor de matematicas?'
+      }
+    ],
+    [
+      {
+        type: 'p',
+        text: '¿'
+      },
+      {
+        type: 'select',
+        options:[
+          {
+            text: "----",
+            val: ''
+          },
+          {
+            text: "Sabes",
+            val: true
+          },
+          {
+            text: "Conoces",
+            val: false
+          }
+        ]
+      },
+      {
+        type:'p',
+        text: 'quien es el profesor de matematicas?'
+      }
+    ]
+  ];
+
   const [selectedOption, setSelectedOption] = useState([]);
   const [submitted, setSubmitted] = useState(false);
-  
-  useEffect(()=>{
-    const valarray = options.map(() => '');
-    setSelectedOption(valarray);
-  // eslint-disable-next-line
+/*  const [selectsId, setSelectsId] = useState([]);
+  const [definitiveId, setDefinitiveId] = useState([]);
+
+/*  useEffect(()=>{
+    sentences.map((sentence) => 
+      {sentence.map((element) => 
+      {
+        const prevState = [...selectsId];
+        console.log(prevState);
+        if (element.type === 'p') {
+          setSelectsId (selectsId.push('p'));
+        } else {
+          const id = selectsId.filter( (Iditem) => Iditem !== 'p').length;
+          setSelectsId (selectsId.push(id));
+        }
+      }  
+    )});
+    const onlySelectsIds = selectsId.filter(item => item !=='p');
+    const innerSelectedOption = onlySelectsIds.map(() => '');
+    setSelectedOption(innerSelectedOption);
+    console.log(selectsId);
+
   },[]);
+
+  useEffect(()=>{
+    setDefinitiveId(selectsId);
+  },[selectsId]);*/
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -48,6 +127,8 @@ const SaberConocer = () => {
   }
 
   const handleChange = (e) => {
+//    console.log(selectsId);
+    console.log(selectedOption);
     const index = e.target.id * 1;
     const newItem = e.target.value;
 
@@ -62,7 +143,7 @@ const SaberConocer = () => {
     }));
 
   }
-
+/*
   return (
     <form onSubmit={handleSubmit}>
     {options.map((item, i) => 
@@ -83,7 +164,36 @@ const SaberConocer = () => {
       <input type="submit" value='submit'/>
     </form>
   );
-
+*/
+  return (
+    <form onSubmit={handleSubmit}>
+      <Sentence>
+        { 
+          sentences.map((sentence, i) => {
+            return sentence.map((item,j) => {
+              if (item.type === 'p') {
+                return <p key={i + j}>{item.text}</p>
+              } else { 
+                //console.log(definitiveId);
+                let index = i*3 + j;
+                //console.log(definitiveId[index]);
+                console.log(index);
+                return <SelectSubmitted
+                  key={i + j }
+                  //value={selectedOption[definitiveId[index]]}
+                  handleChange={handleChange}
+                  //id={definitiveId[index]}
+                  options={item.options}
+                  submitted={submitted}
+                />
+              }
+            })
+          })
+        }      
+      </Sentence>
+      <input type="submit" value='submit'/>
+    </form>
+  )
 }
 
 export default SaberConocer;

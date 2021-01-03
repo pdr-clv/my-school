@@ -25,3 +25,7 @@ const valueState = ({ value }) => {
 export const SelectQuestion = styled.select`
   ${valueState}
 `;
+
+export const Sentence = styled.div`
+  display: flex;
+`;
