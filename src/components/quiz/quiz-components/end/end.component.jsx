@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ButtonCustom from '../../../button/button.component';
+import { formatTime } from '../../../../utils/indexUtils';
 
 import { Card, CardContent, Content } from '../../../card/card.styles';
 import {  } from './end.styles';
 
 const EndComponent = (props) => {
-  const { data, answers, numQuestions } = props;
+  const { data, answers, onReset, onAnswersCheck, time } = props;
   const [answersOk, setAnswersOk] = useState(0);
-  const [result, setResult] = useState(0);
 
   useEffect(()=>{
     //to sum Ok values from arrayResultsOK
@@ -21,7 +21,6 @@ const EndComponent = (props) => {
     });
     const sumCorrects = arrayResultsOK.reduce(reducer);
     setAnswersOk(sumCorrects);
-    setResult(Math.round((sumCorrects / numQuestions)*100));
 // eslint-disable-next-line
   },[])
 
@@ -30,10 +29,11 @@ const EndComponent = (props) => {
       <CardContent>
         <Content>
           <h3>Your result</h3>
-          <p>{answersOk} corrects of {numQuestions} questions</p>
-          <p>{result}%</p>
-          <p>Your time 15s</p>
-          <ButtonCustom label='End'/>
+          <p>{answersOk} corrects of {data.length} questions</p>
+          <p><strong>{Math.floor((answersOk / data.length) * 100)}%</strong></p>
+          <p>Your time: {formatTime(time)}</p>
+          <ButtonCustom type='info' label='Check your answers' handleClick={onAnswersCheck}/>
+          <ButtonCustom type='success' label='Try again' handleClick={onReset}/>
         </Content>
       </CardContent>  
     </Card>

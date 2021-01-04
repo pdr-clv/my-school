@@ -3,7 +3,11 @@ import { ButtonStyles } from './button.styles'
 
 const ButtonCustom = (props) => {
   return (
-    <ButtonStyles onClick={props.handleClick}>{props.label}</ButtonStyles>
+    <ButtonStyles 
+      onClick={props.handleClick} 
+      type={props.type} 
+      width={props.width}
+    >{props.label}</ButtonStyles>
   )
 }
 

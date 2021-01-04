@@ -6,15 +6,36 @@ import EndComponent from './quiz-components/end/end.component';
 
 import { QuizContainer } from './quiz.styles';
 
+let interval;
 
 const Quiz = () => {
   const [step, setStep] = useState(1);
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    if (step === 3) {
+      clearInterval(interval);
+    }
+  },[step])
 
   const QuizStartHandler = () => {
     setStep(2);
+    interval = setInterval(() => {
+      setTime(prevTime => prevTime + 1);
+    }, 1000);
   }
+
+  const resetClickHandler = () =>{
+    setActiveQuestion(0);
+    setAnswers([]);
+    setStep(2);
+    setTime(0);
+    interval = setInterval(() => {
+      setTime(prevTime => prevTime + 1);
+    }, 1000);
+  };
 
   return (
     <QuizContainer>
@@ -30,7 +51,9 @@ const Quiz = () => {
       {step === 3 && <EndComponent 
         data = {quizData.data}
         answers = {answers}
-        numQuestions = {quizData.data.length}
+        onReset={resetClickHandler}
+        onAnswersCheck={()=>{}}
+        time={time}
       />}
     </QuizContainer>
   );

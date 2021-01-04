@@ -47,7 +47,7 @@ const Question = (props) => {
             }
           </ControlDiv>
           {error && <ErrorDiv>{error}</ErrorDiv>}
-          <ButtonCustom label='Next' handleClick = {nextClickHandler}></ButtonCustom>
+          <ButtonCustom width='w95' label='Next' handleClick = {nextClickHandler}></ButtonCustom>
         </Content>
       </CardContent>  
     </Card>
