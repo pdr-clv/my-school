@@ -1,21 +1,16 @@
 import React from 'react';
 import ButtonCustom from '../../../button/button.component';
 
-import { Card, CardContent, Content } from '../../../card/card.styles';
-
+import CardComponent from '../../../card/card.component';
 
 const Start = ({onQuizStart}) => {
   return (
-    <Card>
-      <CardContent>
-        <Content>
-          <h1>Start Quiz</h1>
-          <p>Good luck!</p>
-          <ButtonCustom handleClick={onQuizStart} label='Start' />
-        </Content>
-      </CardContent>  
-    </Card>
-  );
+    <CardComponent>
+      <h1>Start Quiz</h1>
+      <p>Good luck!</p>
+      <ButtonCustom handleClick={onQuizStart} label='Start' />
+    </CardComponent>
+  )
 };
 
 export default Start;

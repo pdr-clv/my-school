@@ -1,5 +1,12 @@
 import styled, { css } from 'styled-components';
 
+const outline = css `
+  background-color: transparent;
+  color: rgba(0,0,0,0.8);
+  border: solid 1px grey;
+`;
+
+
 const warning = css`
   background-color: #f0ad4e;
 `;
@@ -20,6 +27,7 @@ const getType = ({ type }) => {
   if ( type === 'danger') return danger;
   if ( type === 'warning') return warning;
   if ( type === 'info') return info;
+  if ( type === 'outline') return outline;
 
 }
 

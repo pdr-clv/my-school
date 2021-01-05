@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ButtonCustom from '../../../button/button.component';
 
-import { Card, CardContent, Content } from '../../../card/card.styles';
+import CardComponent from '../../../card/card.component';
 import { ControlDiv, ErrorDiv, LabelQ } from './question.styles';
 
 const Question = (props) => {
@@ -32,25 +32,21 @@ const Question = (props) => {
     }
   }
   return (
-    <Card>
-      <CardContent>
-        <Content>
-          <h2>{data.question}</h2>
-          <ControlDiv ref={radiosWrapper}>
-            {
-              data.choices.map((choice, i)=>
-                <LabelQ key={i}>
-                <input type='radio' name='answer' value={choice} onChange={changeHandler} />
-                {choice}
-                </LabelQ>
-              )
-            }
-          </ControlDiv>
-          {error && <ErrorDiv>{error}</ErrorDiv>}
-          <ButtonCustom width='w95' label='Next' handleClick = {nextClickHandler}></ButtonCustom>
-        </Content>
-      </CardContent>  
-    </Card>
+    <CardComponent>
+      <h2>{data.question}</h2>
+      <ControlDiv ref={radiosWrapper}>
+        {
+          data.choices.map((choice, i)=>
+            <LabelQ key={i}>
+            <input type='radio' name='answer' value={choice} onChange={changeHandler} />
+            {choice}
+            </LabelQ>
+          )
+        }
+      </ControlDiv>
+      {error && <ErrorDiv>{error}</ErrorDiv>}
+      <ButtonCustom width='w95' label='Next' handleClick = {nextClickHandler}></ButtonCustom>
+    </CardComponent>
   );
 };
 
