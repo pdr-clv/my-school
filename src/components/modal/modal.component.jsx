@@ -25,7 +25,7 @@ const Modal = ({ show, onClose, title, children, YesNo }) => {
     <ModalContainer onClick = {onClose} show={show}>
       <ModalContent onClick = {e => e.stopPropagation()} show={show}>
         <ModalHeader>
-          <h4>{title}</h4>
+          <h2>{title}</h2>
         </ModalHeader>
         <ModalBody>
           {children}

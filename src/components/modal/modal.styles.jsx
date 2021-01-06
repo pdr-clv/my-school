@@ -24,8 +24,9 @@ export const ModalContent = styled.div`
 
 export const ModalHeader = styled.div`
   padding: 10px;
-  h4 {
+  h2 {
     margin: 0;
+    color: rgb(254,0,50);
   }
 `;
 

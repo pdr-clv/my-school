@@ -52,7 +52,6 @@ const Quiz = () => {
         data = {quizData.data}
         answers = {answers}
         onReset={resetClickHandler}
-        onAnswersCheck={()=>{}}
         time={time}
       />}
     </QuizContainer>

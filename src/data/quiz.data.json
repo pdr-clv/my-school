@@ -12,7 +12,7 @@
     },
     {
       "question": "¿Dónde ____ (usted)?",
-      "choices": ["eres","es","está","estas"],
+      "choices": ["eres","es","está","estás"],
       "answer": "está"
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "question": "____ profesores de español",
-      "choices": ["estamos","eres","estan","somos"],
+      "choices": ["estamos","eres","están","somos"],
       "answer": "somos"
     },
     {
@@ -32,8 +32,23 @@
     },
     {
       "question": "El supermercado _____ lejos de casa",
-      "choices": ["son","está","estan","es"],
+      "choices": ["son","está","están","es"],
       "answer": "está"
+    },
+    {
+      "question": "Hablas muy bien español. ¿De donde ____?",
+      "choices": ["está","estás","eres","es"],
+      "answer": "eres"
+    },
+    {
+      "question": "_____ de Rusia, pero vivo en Madrid",
+      "choices": ["soy","está","estoy","es"],
+      "answer": "soy"
+    },
+    {
+      "question": "No puedo ir al teatro, ahora mismo ____ muy lejos",
+      "choices": ["soy","está","estoy","es"],
+      "answer": "estoy"
     }
   ]
 }
