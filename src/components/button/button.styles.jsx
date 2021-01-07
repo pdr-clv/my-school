@@ -43,6 +43,7 @@ export const ButtonStyles = styled.button`
   ${getType};
   margin: 0 5px;
   transition: all 0.3s ease;
+  display: ${props => props.hidden ? 'none' : ''};
 
   &:hover{
     transform: scale(1.06);

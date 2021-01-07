@@ -3,27 +3,28 @@
     {
       "question": "_____ alto",
       "choices": ["somos","estamos","estoy","soy"],
-      "answer": "soy"
+      "answer": ["Soy","Eres","Es"]
     },
     {
+      "type": "selection",
       "question": "Mis padres _____ en Barcelona",
       "choices": ["estamos","están","son","somos"],
       "answer": "están"
     },
     {
-      "question": "¿Dónde ____ (usted)?",
+      "question": "¿Dónde _____ (usted)?",
       "choices": ["eres","es","está","estás"],
       "answer": "está"
     },
     {
       "question": "_____ muy cansado. Trabajas Mucho",
       "choices": ["eres","estás","estoy","soy"],
-      "answer": "estás"
+      "answer": "Estás"
     },
     {
-      "question": "____ profesores de español",
+      "question": "_____ profesores de español",
       "choices": ["estamos","eres","están","somos"],
-      "answer": "somos"
+      "answer": ["Somos","Son","Sois"]
     },
     {
       "question": "Mis amigos _____ españoles",
@@ -36,17 +37,17 @@
       "answer": "está"
     },
     {
-      "question": "Hablas muy bien español. ¿De donde ____?",
+      "question": "Hablas muy bien español. ¿De donde _____?",
       "choices": ["está","estás","eres","es"],
       "answer": "eres"
     },
     {
       "question": "_____ de Rusia, pero vivo en Madrid",
       "choices": ["soy","está","estoy","es"],
-      "answer": "soy"
+      "answer": "Soy"
     },
     {
-      "question": "No puedo ir al teatro, ahora mismo ____ muy lejos",
+      "question": "No puedo ir al teatro, ahora mismo _____ muy lejos",
       "choices": ["soy","está","estoy","es"],
       "answer": "estoy"
     }

@@ -7,6 +7,7 @@ const ButtonCustom = (props) => {
       onClick={props.handleClick} 
       type={props.type} 
       width={props.width}
+      hidden={props.hidden}
     >{props.label}</ButtonStyles>
   )
 }
