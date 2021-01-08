@@ -22,6 +22,7 @@
       "answer": "Estás"
     },
     {
+      "type": "selection",
       "question": "_____ profesores de español",
       "choices": ["estamos","eres","están","somos"],
       "answer": ["Somos","Son","Sois"]
@@ -37,6 +38,7 @@
       "answer": "está"
     },
     {
+      "type": "selection",
       "question": "Hablas muy bien español. ¿De donde _____?",
       "choices": ["está","estás","eres","es"],
       "answer": "eres"
@@ -47,6 +49,28 @@
       "answer": "Soy"
     },
     {
+      "type": "selection",
+      "question": "No puedo ir al teatro, ahora mismo _____ muy lejos",
+      "choices": ["soy","está","estoy","es"],
+      "answer": "estoy"
+    },
+    {
+      "question": "Mis padres _____ en Barcelona",
+      "choices": ["estamos","están","son","somos"],
+      "answer": "están"
+    },
+    {
+      "question": "_____ profesores de español",
+      "choices": ["estamos","eres","están","somos"],
+      "answer": ["Somos","Son","Sois"]
+    },
+    {
+      "question": "Hablas muy bien español. ¿De donde _____?",
+      "choices": ["está","estás","eres","es"],
+      "answer": "eres"
+    },
+    {
+      "type": "selection",
       "question": "No puedo ir al teatro, ahora mismo _____ muy lejos",
       "choices": ["soy","está","estoy","es"],
       "answer": "estoy"
