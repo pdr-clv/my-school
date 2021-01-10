@@ -4,11 +4,15 @@ import Spanish from '../../languages/es-ES.json';
 import English from '../../languages/en-US.json';
 import Russian from '../../languages/ru-RU.json';
 
-const locale = navigator.language;
+//asign to localStorage locale, then it will persist.
+const locale = localStorage.getItem('locale')
+  ? localStorage.getItem('locale')
+  : navigator.language;
+//navigator.language is like 'es-ES' 'en-US', we are interested in first two leters to set language, and last two letters are interesting for the locale, dates, time, etc.
 let lang;
-if (locale === 'ru-RU') {
+if (locale.split('-')[0] === 'ru') {
   lang = Russian;
-} else if (locale === 'es-ES') {
+} else if (locale.split('-')[0] === 'es') {
   lang = Spanish;
 } else {
   lang = English;
