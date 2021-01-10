@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
-import headerData from './header.data';
 
-import {HeaderStyles,
+import SelectLang from './select-lang.component';
+import headerData from '../../data/header.data';
+
+import {
+  HeaderStyles,
   HeaderContainer,
   LogoContainer,
   LinksContainer,
@@ -11,45 +14,48 @@ import {HeaderStyles,
   MenuLinks,
   CloseBtn,
   NavLink,
-  MenuLinksBackground
+  MenuLinksBackground,
 } from './header.styles';
 
 const Header = (props) => {
   //props are coming from wirthRouter, has location property
   const currentroute = props.location.pathname;
-  const [showNav,setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+
   return (
-    <HeaderStyles currentroute = { currentroute }>
+    <HeaderStyles currentroute={currentroute}>
       <HeaderContainer>
         <LogoContainer>
-          <OpenBtn onClick={()=>setShowNav(!showNav)}>
+          <OpenBtn onClick={() => setShowNav(!showNav)}>
             <span>&#9776;</span>
           </OpenBtn>
           <Logo>Logo</Logo>
         </LogoContainer>
         <LinksContainer>
           <MenuLinks showNav={showNav}>
-            <CloseBtn onClick={()=>setShowNav(!showNav)}>
+            <CloseBtn onClick={() => setShowNav(!showNav)}>
               <span>&times;</span>
             </CloseBtn>
-            {
-              headerData.map((element,key) => 
-                <NavLink 
-                  key = {key}
-                  to={element.linkTo}
-                  currentroute = { currentroute }
-                  onClick={()=>setShowNav(false)}
-                >{element.linkName}</NavLink>
-              )
-            }
+            {headerData.map((element, key) => (
+              <NavLink
+                key={key}
+                to={element.linkTo}
+                currentroute={currentroute}
+                onClick={() => setShowNav(false)}
+              >
+                {element.linkName}
+              </NavLink>
+            ))}
+            <SelectLang />
           </MenuLinks>
           <MenuLinksBackground
-            showNav={showNav} 
-            onClick={()=>setShowNav(false)} />
-        </LinksContainer> 
+            showNav={showNav}
+            onClick={() => setShowNav(false)}
+          />
+        </LinksContainer>
       </HeaderContainer>
     </HeaderStyles>
-  )
+  );
 };
 
 export default withRouter(Header);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import Start from './quiz-components/start/start.component';
 import quizData from '../../data/quiz.data';
 import Question from './quiz-components/question/question.component';
@@ -18,42 +19,46 @@ const QuizType = () => {
     if (step === 3) {
       clearInterval(interval);
     }
-  },[step])
+  }, [step]);
 
   const QuizStartHandler = () => {
     setStep(2);
     interval = setInterval(() => {
-      setTime(prevTime => prevTime + 1);
+      setTime((prevTime) => prevTime + 1);
     }, 1000);
-  }
+  };
 
-  const resetClickHandler = () =>{
+  const resetClickHandler = () => {
     setActiveQuestion(0);
     setAnswers([]);
     setStep(2);
     setTime(0);
     interval = setInterval(() => {
-      setTime(prevTime => prevTime + 1);
+      setTime((prevTime) => prevTime + 1);
     }, 1000);
   };
 
   return (
     <QuizContainer>
-      { step === 1 && <Start onQuizStart = {QuizStartHandler}/>}
-      { step === 2 && <Question 
-        data = {quizData.data[activeQuestion]}
-        onAnswerUpdate = {setAnswers}
-        numberOfQuestions = {quizData.data.length}
-        activeQuestion = {activeQuestion}
-        onSetActiveQuestion = {setActiveQuestion}
-        onSetStep = {setStep}
-      />}
-      {step === 3 && <EndComponent 
-        data = {quizData.data}
-        answers = {answers}
-        onReset={resetClickHandler}
-        time={time}
-      />}
+      {step === 1 && <Start onQuizStart={QuizStartHandler} />}
+      {step === 2 && (
+        <Question
+          data={quizData.data[activeQuestion]}
+          onAnswerUpdate={setAnswers}
+          numberOfQuestions={quizData.data.length}
+          activeQuestion={activeQuestion}
+          onSetActiveQuestion={setActiveQuestion}
+          onSetStep={setStep}
+        />
+      )}
+      {step === 3 && (
+        <EndComponent
+          data={quizData.data}
+          answers={answers}
+          onReset={resetClickHandler}
+          time={time}
+        />
+      )}
     </QuizContainer>
   );
 };
