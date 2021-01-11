@@ -1,15 +1,20 @@
 {
+  "button.start": "Empieza",
+  "button.next": "Siguiente",
+  "button.check": "Comprobar",
+  "button.try": "Hacer otra vez",
+  "button.check.answ": "Comprobar respuestas",
+  "button.close": "Cerrar",
+  "header.home": "Inicio",
+  "header.exercices": "Ejercicios",
+  "header.link2": "Enlace2",
+  "header.link3": "Enlace3",
   "quiz.start.startMsg": "Empieza el juego",
   "quiz.start.msg1": "Escribe tus respuestas",
   "quiz.start.msg2": "Buena suerte",
   "quiz.question.error" : "Escribe una respuesta",
   "quiz.end.result": "Tus resultados",
   "quiz.end.summary": "{answers} correctas de {totalQuestions} preguntas",
-  "quiz.end.time": "Tiempo: ",
-  "button.start": "Empieza",
-  "button.next": "Siguiente",
-  "button.check": "Comprobar",
-  "button.try": "Hacer otra vez",
-  "button.check.answ": "Comprobar respuestas",
-  "button.close": "Cerrar"
+  "quiz.end.time": "Tiempo: "
+
 }

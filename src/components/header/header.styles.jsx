@@ -185,12 +185,21 @@ export const MenuLinksBackground = styled.div`
 export const SelectLangDiv = styled.div`
   display: flex;
   align-items: center;
-  .lang-container {
+
+  div {
     ${StyleNavElement}
     position: relative;
     background-color: unset;
+    &:hover {
+      background-color: unset;
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
 
-    .lang-selected {
+    p {
+      color: white;
+      display: inline;
       width: 40px;
       padding: 5px;
       font-weight: 700;
@@ -200,8 +209,10 @@ export const SelectLangDiv = styled.div`
       cursor: pointer;
       border: 1px solid transparent;
       &:hover {
-        //border: 1px solid rgb(254, 0, 50);
         border-color: rgb(254, 0, 50);
+      }
+      @media screen and (max-width: 768px) {
+        background-color: rgba(256, 256, 256, 0.2);
       }
     }
   }

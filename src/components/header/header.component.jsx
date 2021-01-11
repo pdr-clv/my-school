@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import SelectLang from './select-lang.component';
 import headerData from '../../data/header.data';
@@ -43,10 +44,13 @@ const Header = (props) => {
                 currentroute={currentroute}
                 onClick={() => setShowNav(false)}
               >
-                {element.linkName}
+                <FormattedMessage
+                  id={`header.${element.linkName}`}
+                  defaultMessage={element.linkName}
+                />
               </NavLink>
             ))}
-            <SelectLang />
+            <SelectLang setShowNav={setShowNav} />
           </MenuLinks>
           <MenuLinksBackground
             showNav={showNav}
