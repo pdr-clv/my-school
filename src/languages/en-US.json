@@ -2,5 +2,14 @@
   "quiz.start.startMsg": "Start Quiz",
   "quiz.start.msg1": "Type your answers",
   "quiz.start.msg2": "Good luck",
-  "button.start": "Start"
+  "quiz.question.error" : "Type one answer",
+  "quiz.end.result": "Your result",
+  "quiz.end.summary": "{answers} corrects of {totalQuestions} questions",
+  "quiz.end.time": "Your time: ",
+  "button.start": "Start",
+  "button.next": "Next",
+  "button.check": "Check",
+  "button.try": "Try Again",
+  "button.check.answ": "Check your answers",
+  "button.close": "Close"
 }

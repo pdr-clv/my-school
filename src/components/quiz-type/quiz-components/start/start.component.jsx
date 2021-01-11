@@ -22,7 +22,7 @@ const Start = ({ onQuizStart }) => {
       <p>
         <FormattedMessage id='quiz.start.msg2' defaultMessage='Good luck' />!
       </p>
-      <ButtonCustom handleClick={onQuizStart} label='Start' />
+      <ButtonCustom handleClick={onQuizStart} label='start' />
     </CardComponent>
   );
 };

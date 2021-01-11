@@ -2,5 +2,14 @@
   "quiz.start.startMsg": "Начать игра",
   "quiz.start.msg1": "напишите ответы",
   "quiz.start.msg2": "удачи",
-  "button.start": "начинайте"
+  "quiz.question.error" : "напишите ответ",
+  "quiz.end.result": "Ваш ресултат",
+  "quiz.end.summary": "{answers} провелний о {totalQuestions} вопросы",
+  "quiz.end.time": "время: ",
+  "button.start": "Начинаите",
+  "button.next": "Следуюший",
+  "button.check": "Провераите",
+  "button.try": "сделаите ещё раз",
+  "button.check.answ": "Провераите ответы",
+  "button.close": "закроите"
 }
