@@ -198,7 +198,7 @@ export const SelectLangDiv = styled.div`
     }
 
     p {
-      color: white;
+      color: black;
       display: inline;
       width: 40px;
       padding: 5px;
