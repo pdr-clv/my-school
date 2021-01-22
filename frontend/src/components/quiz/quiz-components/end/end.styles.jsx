@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SectionAnswers = styled.section`
   height: 50vh;
   overflow-y: scroll;
-  ul {
+  ol {
     padding: 10px 20px;
   }
 
